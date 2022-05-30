@@ -55,8 +55,7 @@ def worker(info) -> None:
 with TelegramClient('sessions/session', API_ID, API_HASH) as client:
 	while True:
 		channel = input("link to post (format: https://t.me/<name_channel>/<post_id>): ")
-		info = channel.split("/")
-		worker = worker(info)
+		worker = worker(channel.split("/"))
 		nexted = input("\n[Y/n] Continue work?: ")
 		if nexted == "n":
 			sys.exit()
